@@ -1,7 +1,7 @@
 <img align="right" src="https://i.imgur.io/Amj2BQi_d.webp?maxwidth=640&shape=thumb&fidelity=medium" width="280px" draggable="false">
 
 # Bedroz
-Bedroz.lol is a website made with ReactJS, which has all your favorite movies and tv shows within a nice and clean UI. 
+Bedroz.lol is a website made with ReactJS, which has all your favorite movies and tv shows, in a nice and clean UI. 
 
 ## Requirements
 - [NodeJS](https://nodejs.org/en/download/)
@@ -15,7 +15,7 @@ Bedroz.lol is a website made with ReactJS, which has all your favorite movies an
 - `Site Name`: Change the config in /src/config.ts and change the site name in /index.html
 
 3. Run `start.bat` to test in the dev server. 
-4. Run `build.bat` to build the production files that will be uploaded on your hosting server.
+4. Run `build.bat` to build the production files (/dist) that will be uploaded on your hosting server.
 5. Voila, you are now done 
 
 ## Support
