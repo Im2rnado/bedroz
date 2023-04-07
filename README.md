@@ -1,5 +1,6 @@
-# Bedroz
 <img align="right" src="https://i.imgur.io/Amj2BQi_d.webp?maxwidth=640&shape=thumb&fidelity=medium" width="280px" draggable="false">
+
+# Bedroz
 Bedroz.lol is a website made with ReactJS, which has all your favorite movies and tv shows within a nice and clean UI. 
 
 ## Requirements
