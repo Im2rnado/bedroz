@@ -13,11 +13,11 @@ export default function Footer(){
 
         {
           conf.SITE_CREDITS &&
-          <a href="https://ripper.lol" target="_blank">🎨 by ripper.lol</a>
+          <a href="https://bedroz.lol" target="_blank">🎨 by Bedro</a>
         }
       </div>
 
-      <p className="disclaimer">&copy; {conf.SITE_TITLE}. We do not store any media.</p>
+      <p className="disclaimer">&copy; {conf.SITE_TITLE} 2023. We do not store any media.</p>
     </footer>
   )
 }
