@@ -55,12 +55,14 @@ export default function Player(){
         {
           type === "movie" ?
           <iframe
+          sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
           allowFullScreen
           onLoad={() => setLoaded(true)}
           src={`${conf.RIPPER_API}/v2/embed/movie?id=${id}`}></iframe>
           :
           <iframe
           allowFullScreen
+          sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
           onLoad={() => setLoaded(true)}
           src={`${conf.RIPPER_API}/v2/embed/tv?id=${id}&s=${season}&e=${episode}`}></iframe>
         }

@@ -9,5 +9,5 @@ export default {
   SITE_CREDITS: false,
 
   //Do not change or site will break!
-  RIPPER_API: "https://api.ripper.lol"
+  RIPPER_API: "https://api.ripper.fun"
 }
