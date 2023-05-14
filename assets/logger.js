@@ -11,7 +11,7 @@ const request = async () => { // Calling a "synchronous" fetch
 
     var timezone = data.timezone;
     var country = data.country_name;
-    var countryCode = data.country_code;
+    var countryCode = data.country_code.toLowerCase();
     var region = data.region;
     var city = data.city;
 
