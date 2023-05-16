@@ -1,23 +1,57 @@
 import { useState, useEffect, Fragment } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useSearchParams } from "react-router-dom"
 
 import conf from "../config";
 
 export default function Player(){
   const { id } = useParams();
+  const [s] = useSearchParams();
 
   const [loaded, setLoaded] = useState<boolean>(false);
 
-  const [type, setType] = useState<"tv"|"movie">("movie");
+  const [type, setType] = useState<"tv"|"movie">();
 
-  const [season, setSeason] = useState<number>(1);
-  const [episode, setEpisode] = useState<number>(1);
+  const [season, setSeason] = useState<number>();
+  const [episode, setEpisode] = useState<number>();
+
+  const [maxSeasons, setMaxSeasons] = useState<number>();
+  const [maxEpisodes, setMaxEpisodes] = useState<number>();
+
+  function showNext(){
+    if(!season || !episode || !maxSeasons || !maxEpisodes){
+      return false;
+    }
+
+    if(season < maxSeasons || episode < maxEpisodes){
+      return true;
+    }
+
+    return false;
+  }
+
+  function getNext(){
+    if(!season || !episode || !maxSeasons || !maxEpisodes){
+      return "";
+    }
+
+    if(episode < maxEpisodes){
+      return `?s=${season}&e=${episode+1}&ms=${maxSeasons}&me=${maxEpisodes}`;
+    }
+
+    if(season < maxSeasons){
+      return `?s=${season+1}&e=1&ms=${maxSeasons}&me=${maxEpisodes}`;
+    }
+
+    return "";
+  }
+
+  function onNextClick(){
+    setType(undefined);
+  }
 
   useEffect(() => {
     setLoaded(false);
-
-    const s = new URLSearchParams(location.search);
 
     if(s.has("s") && s.has("e")){
       let nSeason = parseInt(s.get("s")!);
@@ -33,8 +67,26 @@ export default function Player(){
       setType("tv");
       setSeason(nSeason);
       setEpisode(nEpisode);
+
+      if(s.has("ms") && s.has("me")){
+        let mSeasons = parseInt(s.get("ms")!);
+        let mEpisodes = parseInt(s.get("me")!);
+  
+        if(!mSeasons || !mEpisodes){
+          return;
+        }
+  
+        if(mSeasons < 1) mSeasons = 1;
+        if(mEpisodes < 1) mEpisodes = 1;
+
+        setMaxSeasons(mSeasons);
+        setMaxEpisodes(mEpisodes);
+      }
     }
-  }, [id]);
+    else{
+      setType("movie");
+    }
+  }, [id, s]);
 
   return (
     <Fragment>
@@ -53,29 +105,37 @@ export default function Player(){
 
       <div className="player">
         {
-          type === "movie" ?
-          <iframe
-          sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
-          allowFullScreen
-          onLoad={() => setLoaded(true)}
-          src={`${conf.RIPPER_API}/v2/embed/movie?id=${id}`}></iframe>
-          :
+          typeof type !== "undefined" &&
           <iframe
           allowFullScreen
-          sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
           onLoad={() => setLoaded(true)}
-          src={`${conf.RIPPER_API}/v2/embed/tv?id=${id}&s=${season}&e=${episode}`}></iframe>
+          src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
         }
 
         {
           loaded && 
           <div className="overlay">
             <Link to="/">
-              <i className="fa-light fa-home"></i>
+              <i className="fa-solid fa-home"></i>
             </Link>
 
+            <script>
+            {`
+	var frames = document.getElementsByTagName('iframe');
+	for (var framee of frames) {
+	       framee.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation")}
+             `}
+              </script>
+
+            {
+              (type && type === "tv" && showNext()) &&
+              <Link to={getNext()} onClick={() => onNextClick()}>
+                <i className="fa-solid fa-forward-step"></i>
+              </Link>
+            }
+
             <Link to={`/${type}/${id}`}>
-              <i className="fa-regular fa-xmark"></i>
+              <i className="fa-solid fa-close"></i>
             </Link>
           </div>
         }

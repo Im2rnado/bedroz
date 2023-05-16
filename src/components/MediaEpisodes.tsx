@@ -5,6 +5,8 @@ interface EpisodeCardProps{
   id: string;
   number: string|number;
   season: number;
+  maxSeasons: number;
+  maxEpisodes: number;
   image: string;
   title: string;
   runtime: number;
@@ -28,9 +30,9 @@ function EpisodeHolder(){
   )
 }
 
-function EpisodeCard({id, number, season, image, title, runtime}:EpisodeCardProps){
+function EpisodeCard({id, number, season, maxSeasons, maxEpisodes, image, title, runtime}:EpisodeCardProps){
   return (
-    <Link className="card" to={`/player/${id}?s=${season}&e=${number}`}>
+    <Link className="card" to={`/player/${id}?s=${season}&e=${number}&ms=${maxSeasons}&me=${maxEpisodes}`}>
       <div className="image">
         <img src={image} alt="" />
         
@@ -70,6 +72,8 @@ export default function EpisodesSection({id, season, setSeason, seasons, episode
               id={id}
               number={v.number}
               season={season}
+              maxSeasons={seasons}
+              maxEpisodes={episodes.length}
               runtime={v.runtime}
               title={v.title}
               image={v.image} />
