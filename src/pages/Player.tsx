@@ -109,7 +109,17 @@ export default function Player(){
           <iframe
           allowFullScreen
           onLoad={() => setLoaded(true)}
-          src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
+          src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}>
+	  </iframe>
+        
+          <script>
+            {`
+	       var frames = document.getElementsByTagName('iframe');
+	           for (var frame of frames) {
+	               frame.setAttribute("sandbox", "allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
+	           }
+            `}
+          </script>
         }
 
         {
@@ -118,14 +128,6 @@ export default function Player(){
             <Link to="/">
               <i className="fa-solid fa-home"></i>
             </Link>
-
-            <script>
-            {`
-	var frames = document.getElementsByTagName('iframe');
-	for (var framee of frames) {
-	       framee.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation")}
-             `}
-              </script>
 
             {
               (type && type === "tv" && showNext()) &&
