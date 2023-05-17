@@ -109,10 +109,12 @@ export default function Player(){
           <iframe
           allowFullScreen
           onLoad={() => setLoaded(true)}
-          src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}>
-	  </iframe>
-        
-          <script>
+          src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
+        }
+
+        {
+          loaded &&
+	<script>
             {`
 	       var frames = document.getElementsByTagName('iframe');
 	           for (var frame of frames) {
@@ -120,7 +122,7 @@ export default function Player(){
 	           }
             `}
           </script>
-        }
+         }
 
         {
           loaded && 
