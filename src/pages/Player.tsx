@@ -118,7 +118,7 @@ export default function Player(){
             {`
 	       var frames = document.getElementsByTagName('iframe');
 	           for (var frame of frames) {
-	               frame.setAttribute("sandbox", "allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
+	               frame.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
 	           }
             `}
           </script>
