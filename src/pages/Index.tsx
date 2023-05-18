@@ -30,6 +30,9 @@ export default function Index(){
     const req = await fetch(`${conf.RIPPER_API}/v3/home`);
     const res = await req.json();
 
+    const req2 = await fetch('https://raw.githubusercontent.com/Im2rnado/bedroz/main/api.json');
+    const res2 = await req2.json();
+
     if(!("success" in res) || !res['success']){
       setError("Unable to load server data");
       return;
@@ -38,7 +41,8 @@ export default function Index(){
     const data = res['data'];
 
     setHero(data['hero']);
-    setCollections(data['collections']);
+    setCollections(data['collections'].concat(res2['data']['collections']));
+    console.log(collections);
   }
 
   useEffect(() => {
