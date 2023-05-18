@@ -50,6 +50,19 @@ body{
   z-index: -2;
 }
 
+.home-alert-wrap {
+    margin: 0 auto 20px;
+    max-width: 90vw;
+}
+
+.home-alert {
+    padding: 10px 15px;
+    background-color: #b44cb5;
+    color: #fff;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,.705));
+}
+
 @import "error";
 @import "footer";
 @import "hero";

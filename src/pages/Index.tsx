@@ -59,6 +59,12 @@ export default function Index(){
         <title>{conf.SITE_TITLE}</title>
       </Helmet>
 
+       <div className='home-alert-wrap'>
+        <div className='home-alert'>
+            <p><center>Support us by sharing Bedroz.lol with friends and family! Made with ❤️ by Bedro</center></p>
+        </div>
+      </div>
+
       <div className='hero-container'>
         <Link className='hero' to={`/movie/${hero.id}`} style={{backgroundImage: `url('${hero.backdrop}')`}}>
           <img className='logo' src={hero.logo} draggable="false" />
