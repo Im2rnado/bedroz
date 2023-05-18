@@ -111,7 +111,7 @@ export default function Player(){
           onLoad={() => setLoaded(true)}
           // src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
           sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
-          src={`${conf.RIPPER_API}/v2/embed/tv?id=${id}&s=${season}&e=${episode}`}></iframe>
+          src={`${conf.RIPPER_API}/v2/embed/${type}?id=${id}${season ? "&s="+season : ""}${episode ? "&e="+episode : ""}`}></iframe>
         }
 
         {/*
