@@ -115,17 +115,18 @@ export default function Player(){
 	  // src={`${conf.RIPPER_API}/v2/embed/${type}?id=${id}${season ? "&s="+season : ""}${episode ? "&e="+episode : ""}`}></iframe>
         }
 
-        {/*
+        {
           loaded &&
 	<script>
             {`
-	       var frames = document.getElementsByTagName('iframe');
-	           for (var frame of frames) {
-	               frame.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
-	           }
+		Object.defineProperty(document.querySelector('iframe').contentWindow.navigator, 'userAgent', "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1");
+	       //var frames = document.getElementsByTagName('iframe');
+	       //    for (var frame of frames) {
+	       //        frame.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
+	       //    }
             `}
           </script>
-         */}
+         }
 
         {
           loaded && 
