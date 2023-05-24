@@ -27,18 +27,18 @@ export default function Movie(){
     setData(null);
     setLoaded(false);
 
-    const req = await fetch(`${conf.RIPPER_API}/v3/movie/${id}`);
+    const req = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${CONF.API_KEY}&append_to_response=recommendations`);
     const res = await req.json();
 
-    if(!("success" in res)){
+    if(("success" in res)){
       nav("/unavailable");
       return;
     }
 
     const nData:MovieProps = res.data;
 
-    await loadImg(nData.images.backdrop);
-    await loadImg(nData.images.logo);
+    await loadImg("https://image.tmdb.org/t/p/original" + nData.backdrop_path);
+    await loadImg("https://image.tmdb.org/t/p/w500" + nData.poster_path);
 
     setData(res.data);
     setLoaded(true);
@@ -62,11 +62,11 @@ export default function Movie(){
         <title>{data.title} - {conf.SITE_TITLE}</title>
       </Helmet>
       
-      <MediaBackground backdrop={data.images.backdrop} />
+      <MediaBackground backdrop={"https://image.tmdb.org/t/p/original" + data.backdrop_path} />
     
       <div className="media-content">
         <div className="media-logo">
-          <img src={data.images.logo} title={data.title} alt={data.title} draggable="false" />
+          <img src={"https://image.tmdb.org/t/p/w500" + data.poster_path} title={data.title} alt={data.title} draggable="false" />
         </div>
 
         <div className="media-main">
@@ -79,13 +79,13 @@ export default function Movie(){
             <div className="media-genres">
               {
                 data.genres.length ?
-                data.genres.map((v, i) => <span key={i}>{v}</span>) :
+                data.genres.map((v, i) => <span key={i}>{v.name}</span>) :
                 <span>Movie</span>
               }
             </div>
 
             <div className="media-details">
-              <p>{toYear(data.date)}</p>
+              <p>{toYear(data.release_date)}</p>
               <p>{toHM(data.runtime)}</p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Movie(){
             </Link>
           </div>
 
-          <p className="media-description">{data.description}</p>
+          <p className="media-description">{data.overview}</p>
         </div>
       </div>
 
@@ -107,7 +107,7 @@ export default function Movie(){
       tabs={[
         {
           title: "Suggested",
-          element: <PosterSection posters={data.suggested} />
+          element: <PosterSection posters={data.recommendations.results} />
         }
       ]} />
     </Fragment>
