@@ -27,18 +27,18 @@ export default function Movie(){
     setData(null);
     setLoaded(false);
 
-    const req = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${CONF.API_KEY}&append_to_response=recommendations`);
+    const req = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${CONF.API_KEY}&append_to_response=recommendations,images`);
     const res = await req.json();
 
-    if(("success" in res)){
+    if("status_code" in res){
       nav("/unavailable");
       return;
     }
 
-    const nData:MovieProps = res.data;
+    const nData:MovieProps = res;
 
     await loadImg("https://image.tmdb.org/t/p/original" + nData.backdrop_path);
-    await loadImg("https://image.tmdb.org/t/p/w500" + nData.poster_path);
+    await loadImg("https://image.tmdb.org/t/p/w500" + nData.images.logos[2].file_path);
 
     setData(res.data);
     setLoaded(true);
@@ -66,7 +66,7 @@ export default function Movie(){
     
       <div className="media-content">
         <div className="media-logo">
-          <img src={"https://image.tmdb.org/t/p/w500" + data.poster_path} title={data.title} alt={data.title} draggable="false" />
+          <img src={"https://image.tmdb.org/t/p/w500" + data.images.logos[2].file_path} title={data.title} alt={data.title} draggable="false" />
         </div>
 
         <div className="media-main">
