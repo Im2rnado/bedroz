@@ -24,23 +24,17 @@ export default function Search(){
       return;
     }
 
-    const req = await fetch(`${conf.RIPPER_API}/v3/search?query=${query}`);
-    const res = await req.json();
+    const req = await fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${conf.API_KEY}`);
+    const res = await req.json().results;
 
-    if("error" in res){
+    if(res.count <= 0){
       setResults(null);
-      setError(res.error);
-      return;
-    }
-
-    if(!("data" in res)){
-      setResults(null);
-      setError("Unexpected search error, please try again.");
+      setError("No results found.");
       return;
     }
 
     setError(null);
-    setResults(res.data);
+    setResults(res);
   }
 
   useEffect(() => {
@@ -84,7 +78,7 @@ export default function Search(){
             <div className="search-results">
               {
                 results.map((v, i) => {
-                  return <Link className='poster' key={i} title={v.title} to={`/${v.type}/${v.id}`} style={{backgroundImage: `url('${v.image}')`}}></Link>
+                  return <Link className='poster' key={i} title={v.name} to={`/${v.media_type}/${v.id}`} style={{backgroundImage: `url('https://image.tmdb.org/t/p/w300${v.poster_path}')`}}></Link>
                 })
               }
             </div>
