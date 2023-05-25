@@ -1,8 +1,473 @@
 {
   "success": true,
-  "data": {
-    "collections": [
-      {
+  "hero": {
+    "id": 603692,
+    "title": "John Wick: Chapter 4",
+    "logo": "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/h8gHn0OzBoaefsYseUByqsmEDMY.jpg"
+  },
+  "collections": [
+    {
+      "title": "Trending Movies",
+      "data": [
+        {
+          "id": 603692,
+          "title": "John Wick: Chapter 4",
+          "poster_path": "/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 502356,
+          "title": "The Super Mario Bros. Movie",
+          "poster_path": "/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 385687,
+          "title": "Fast X",
+          "poster_path": "/1E5baAaEse26fej7uHcjOgEE2t2.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 493529,
+          "title": "Dungeons & Dragons: Honor Among Thieves",
+          "poster_path": "/v7UF7ypAqjsFZFdjksjQ7IUpXdn.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 447365,
+          "title": "Guardians of the Galaxy Vol. 3",
+          "poster_path": "/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 640146,
+          "title": "Ant-Man and the Wasp: Quantumania",
+          "poster_path": "/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 713704,
+          "title": "Evil Dead Rise",
+          "poster_path": "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 552688,
+          "title": "The Mother",
+          "poster_path": "/vnRthEZz16Q9VWcP5homkHxyHoy.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 840326,
+          "title": "Sisu",
+          "poster_path": "/pnQYjDxqZ3C6reI8N0MfNi4NMkZ.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 964980,
+          "title": "Air",
+          "poster_path": "/76AKQPdH3M8cvsFR9K8JsOzVlY5.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 447277,
+          "title": "The Little Mermaid",
+          "poster_path": "/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 758323,
+          "title": "The Pope's Exorcist",
+          "poster_path": "/4IjRR2OW2itjQWQnmlUzvwLz9DQ.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 882569,
+          "title": "Guy Ritchie's The Covenant",
+          "poster_path": "/aX0H63vho7rZ9Rm3I567Zf00Z1t.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 594767,
+          "title": "Shazam! Fury of the Gods",
+          "poster_path": "/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 920125,
+          "title": "White Men Can't Jump",
+          "poster_path": "/7MUQMSncjUSYeNx0ZAgFCxhlPhv.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 76600,
+          "title": "Avatar: The Way of Water",
+          "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 620705,
+          "title": "Crater",
+          "poster_path": "/n8ZpMwYT02XjpQHpSxn1eJw5Zpz.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 643215,
+          "title": "Asterix & Obelix: The Middle Kingdom",
+          "poster_path": "/ifOqT5SmA4ANjmyEacLw3KAFKUd.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 934433,
+          "title": "Scream VI",
+          "poster_path": "/wDWwtvkRRlgTiUr6TyLSMX8FCuZ.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 649609,
+          "title": "Renfield",
+          "poster_path": "/p6yUjhvNGQpFZilKwOKbxQ1eHlo.jpg",
+          "media_type": "movie"
+        }
+      ]
+    },
+    {
+      "title": "Top Rated Movies",
+      "data": [
+        {
+          "id": 238,
+          "title": "The Godfather",
+          "poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 278,
+          "title": "The Shawshank Redemption",
+          "poster_path": "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 240,
+          "title": "The Godfather Part II",
+          "poster_path": "/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 19404,
+          "title": "Dilwale Dulhania Le Jayenge",
+          "poster_path": "/ktejodbcdCPXbMMdnpI9BUxW6O8.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 424,
+          "title": "Schindler's List",
+          "poster_path": "/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 772071,
+          "title": "Cuando Sea Joven",
+          "poster_path": "/6gIJuFHh5Lj4dNaPG3TzIMl7L68.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 129,
+          "title": "Spirited Away",
+          "poster_path": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 389,
+          "title": "12 Angry Men",
+          "poster_path": "/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 372058,
+          "title": "Your Name.",
+          "poster_path": "/q719jXXEzOoYaps6babgKnONONX.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 496243,
+          "title": "Parasite",
+          "poster_path": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 155,
+          "title": "The Dark Knight",
+          "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 497,
+          "title": "The Green Mile",
+          "poster_path": "/o0lO84GI7qrG6XFvtsPOSV7CTNa.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 680,
+          "title": "Pulp Fiction",
+          "poster_path": "/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 429,
+          "title": "The Good, the Bad and the Ugly",
+          "poster_path": "/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 13,
+          "title": "Forrest Gump",
+          "poster_path": "/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 122,
+          "title": "The Lord of the Rings: The Return of the King",
+          "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 995133,
+          "title": "The Boy, the Mole, the Fox and the Horse",
+          "poster_path": "/oQRgyQCzcyZvE6w5heM9ktVY0LT.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 769,
+          "title": "GoodFellas",
+          "poster_path": "/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 372754,
+          "title": "Dou kyu sei – Classmates",
+          "poster_path": "/cIfRCA5wEvj9tApca4UDUagQEiM.jpg",
+          "media_type": "movie"
+        },
+        {
+          "id": 704264,
+          "title": "Primal: Tales of Savagery",
+          "poster_path": "/9NBBkdxH0TjQEBSN2AzeE1sgsF9.jpg",
+          "media_type": "movie"
+        }
+      ]
+    },
+    {
+      "title": "Trending TV Shows",
+      "data": [
+        {
+          "id": 125988,
+          "poster_path": "/1NxaSn4ver4jIvLeD7YF8cTlZjB.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 137040,
+          "poster_path": "/5YvXX1sBJVZBF8DocLFq16Z0ABU.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 85937,
+          "poster_path": "/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 114922,
+          "poster_path": "/AcrDB32TqpAGwvQFbICALGxSzn3.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 221300,
+          "poster_path": "/ryqcPZCEnEahBW4X06QZBUmtavp.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 195670,
+          "poster_path": "/hxvTdKAwv27PUfpXOQp6AwWr6V.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 135615,
+          "poster_path": "/enS7OYgJoL2GqTFmvb58PYUIjAZ.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 37854,
+          "poster_path": "/dum1wnm6kJOUos0XJqjB8s2UWi9.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 60735,
+          "poster_path": "/rg8N7x27Ef6PvlIiioLStf9ZaIO.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 76331,
+          "poster_path": "/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 124800,
+          "poster_path": "/8WchbT0UPQeo3PZ6G01fhccYaQB.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 221291,
+          "poster_path": "/cfcmyPUJbynbUtKIlqSdkOrgyzU.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 124364,
+          "poster_path": "/uV65yaFkw6B4KHXAsBYui0KvJq.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 97546,
+          "poster_path": "/5fhZdwP1DVJ0FyVH6vrFdHwpXIn.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 196454,
+          "poster_path": "/eR7btjpvOugivUYSoEsD2iAOYsJ.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 62286,
+          "poster_path": "/sQleNHhKl32QFnSlahb5IHDWcDq.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 82856,
+          "poster_path": "/eU1i6eHXlzMOlEq0ku1Rzq7Y4wA.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 95171,
+          "poster_path": "/yMdFsHKp4YX2CUkAQcZswxXDuoe.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 1399,
+          "poster_path": "/7WUHnWGx5OO145IRxPDUkQSh4C7.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 112211,
+          "poster_path": "/4rmFpvBw8kNuI15CrDlGVFSU7zc.jpg",
+          "media_type": "tv"
+        }
+      ]
+    },
+    {
+      "title": "Top Rated TV Shows",
+      "data": [
+        {
+          "id": 1396,
+          "poster_path": "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 94605,
+          "poster_path": "/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 100088,
+          "poster_path": "/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 60625,
+          "poster_path": "/cvhNj9eoRBe5SxjCbQTkh05UP5K.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 37854,
+          "poster_path": "/dum1wnm6kJOUos0XJqjB8s2UWi9.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 31911,
+          "poster_path": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 85937,
+          "poster_path": "/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 70785,
+          "poster_path": "/6P6tXhjT5tK3qOXzxF9OMLlG7iz.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 67915,
+          "poster_path": "/t7aUi8jbsIUSCNqA1akAbKjBWjU.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 65930,
+          "poster_path": "/ivOLM47yJt90P19RH1NvJrAJz9F.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 95557,
+          "poster_path": "/yDWJYRAwMNKbIYT8ZB33qy84uzO.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 92685,
+          "poster_path": "/zhdy3PcNVE15wj1wrxn45ARZBnx.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 246,
+          "poster_path": "/uXccE6tjaYyVflI3BEmZ7xHKPOs.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 31132,
+          "poster_path": "/mS5SLxMYcKfUxA0utBSR5MOAWWr.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 83121,
+          "poster_path": "/5khbC6AuNgnvnoDbjIMKCOhEtIc.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 135157,
+          "poster_path": "/q2IiPRSXPOZ6qVRj36WRAYEQyHs.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 114410,
+          "poster_path": "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 89456,
+          "poster_path": "/jflPzxYbM4MxxCppo2AbvSbTOLm.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 46298,
+          "poster_path": "/ucpgmUR1h5Te1BYegKItoPjOeF7.jpg",
+          "media_type": "tv"
+        },
+        {
+          "id": 213762,
+          "poster_path": "/kBlqr507IV9bDKHLEFBtEtTfCw3.jpg",
+          "media_type": "tv"
+        }
+      ]
+    },
+    {
         "title": "Bedroz Picks",
         "data": [
           {
@@ -133,6 +598,5 @@
           }
         ]
       }
-    ]
-  }
+  ]
 }
