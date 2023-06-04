@@ -3,12 +3,12 @@ import { EpisodeProps } from "../types/Media"
 
 interface EpisodeCardProps{
   id: string;
-  number: string|number;
+  episode_number: string|number;
   season: number;
   maxSeasons: number;
   maxEpisodes: number;
-  image: string;
-  title: string;
+  still_path: string;
+  name: string;
   runtime: number;
 }
 
@@ -30,18 +30,18 @@ function EpisodeHolder(){
   )
 }
 
-function EpisodeCard({id, number, season, maxSeasons, maxEpisodes, image, title, runtime}:EpisodeCardProps){
+function EpisodeCard({id, episode_number, season, maxSeasons, maxEpisodes, still_path, name, runtime}:EpisodeCardProps){
   return (
-    <Link className="card" to={`/player/${id}?s=${season}&e=${number}&ms=${maxSeasons}&me=${maxEpisodes}`}>
+    <Link className="card" to={`/player/${id}?s=${season}&e=${episode_number}&ms=${maxSeasons}&me=${maxEpisodes}`}>
       <div className="image">
-        <img src={image} alt="" />
+        <img src={"https://image.tmdb.org/t/p/w500" + still_path} alt="" />
         
         <button>
           <i className="fa-solid fa-play"></i>
         </button>
       </div>
 
-      <p className="title">{number}. {title} ({runtime}m)</p>
+      <p className="title">{episode_number}. {name} ({runtime}m)</p>
     </Link>
   )
 }
@@ -70,13 +70,13 @@ export default function EpisodesSection({id, season, setSeason, seasons, episode
               <EpisodeCard
               key={i}
               id={id}
-              number={v.number}
+              episode_number={v.episode_number}
               season={season}
               maxSeasons={seasons}
               maxEpisodes={episodes.length}
               runtime={v.runtime}
-              title={v.title}
-              image={v.image} />
+              name={v.name}
+              still_path={v.still_path} />
             )
           }) :
           <EpisodeHolder />

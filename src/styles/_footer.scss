@@ -14,13 +14,11 @@ footer{
 }
 
 footer img{
-  max-width: 80px;
-  max-height: 50px;
+  max-width: 100px;
+  max-height: 80px;
 }
 
 footer .links{
-  margin-top: 15px;
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,13 +31,11 @@ footer .links{
 }
 
 footer .disclaimer{
-  margin-top: 15px;
   font-size: 13px;
   color: #cacaca;
 }
 
 footer .credit{
-  margin-top: 15px;
   color: #cacaca;
   font-size: 12px;
   

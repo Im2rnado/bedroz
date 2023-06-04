@@ -12,13 +12,13 @@ interface SectionProps{
   posters: PosterOptions[]
 }
 
-function Poster({id, image, type, Ref}:PosterProps){
+function Poster({media_type, id, poster_path, type, Ref}:PosterProps){
   return (
     <Link
     ref={Ref}
     className='poster'
-    to={`/${type}/${id}`}
-    style={{backgroundImage:`url('${image}')`}}></Link>
+    to={`/${media_type}/${id}`}
+    style={{backgroundImage:`url('https://image.tmdb.org/t/p/w300${poster_path}')`}}></Link>
   );
 }
 

@@ -31,21 +31,25 @@ export default function Tv(){
     setEpisodes(null);
     setLoaded(false);
 
-    const req = await fetch(`${conf.RIPPER_API}/v3/tv/${id}`);
+    const req = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${conf.API_KEY}&append_to_response=recommendations,images`);
     const res = await req.json();
 
-    if(!("success" in res)){
+    const req2 = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/1?api_key=${conf.API_KEY}&append_to_response=recommendations,images`);
+    const res2 = await req2.json();
+
+     if(res.success == false ){
       nav("/unavailable");
       return;
     }
 
-    const nData:TvData = res.data;
+    const nData:TvData = res;
 
-    await loadImg(nData.images.backdrop);
-    await loadImg(nData.images.logo);
+    nData.logo = nData.images.logos.find(i => i.iso_639_1 == "en");
+    await loadImg("https://image.tmdb.org/t/p/original" + nData.backdrop_path);
+    if (nData.logo) await loadImg("https://image.tmdb.org/t/p/w500" + nData.logo.file_path);
 
-    setEpisodes(nData.episodes);
-    setData(res.data);
+    setEpisodes(res2.episodes);
+    setData(res);
     setLoaded(true);
   }
 
@@ -53,15 +57,15 @@ export default function Tv(){
     setEpisodes(null);
     setSeason(nSeason);
 
-    const req = await fetch(`${conf.RIPPER_API}/v3/tv/${id}/episodes?s=${nSeason}`);
+    const req = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/${nSeason}?api_key=${conf.API_KEY}&append_to_response=recommendations,images`);
     const res = await req.json();
 
-    if(!("success" in res)){
+    if(res.success == false ){
       nav("/unavailable");
       return;
     }
 
-    setEpisodes(res.data);
+    setEpisodes(res.episodes);
   }
 
   useEffect(() => {
@@ -79,14 +83,14 @@ export default function Tv(){
   return (
     <Fragment>
       <Helmet>
-        <title>{data.title} - {conf.SITE_TITLE}</title>
+        <title>{data.name} - {conf.SITE_TITLE}</title>
       </Helmet>
 
-      <MediaBackground backdrop={data.images.backdrop} />
+      <MediaBackground backdrop={"https://image.tmdb.org/t/p/original" + data.backdrop_path} />
     
       <div className="media-content">
         <div className="media-logo">
-          <img src={data.images.logo} alt={data.title} draggable="false" />
+          <img src={(data.logo ? "https://image.tmdb.org/t/p/w500" + data.logo.file_path : "")} alt={data.title} draggable="false" />
         </div>
 
         <div className="media-main">
@@ -99,19 +103,19 @@ export default function Tv(){
             <div className="media-genres">
               {
                 data.genres.length ?
-                data.genres.map((v, i) => <span key={i}>{v}</span>) :
+                data.genres.map((v, i) => <span key={i}>{v.name}</span>) :
                 <span>Series</span>
               }
             </div>
 
             <div className="media-details">
-              <p>{toYear(data.date)}</p>
-              <p>{data.seasons} Season{data.seasons > 1 ? "s" : ""}</p>
+              <p>{toYear(data.first_air_date)}</p>
+              <p>{data.number_of_seasons} Season{data.number_of_seasons > 1 ? "s" : ""}</p>
             </div>
           </div>
 
           <div className="media-actions">
-            <Link to={`/player/${id}?s=${season}&e=1${data.seasons ? "&ms="+data.seasons : ""}${episodes ? "&me="+episodes.length : ""}`}>
+            <Link to={`/player/${id}?s=${season}&e=1${data.number_of_seasons ? "&ms="+ data.number_of_seasons : ""}${episodes ? "&me="+episodes.length : ""}`}>
               <button className="primary">
                 <i className="fa-solid fa-play"></i>
                 <p>S{season} E1</p>
@@ -124,7 +128,7 @@ export default function Tv(){
             </button> */}
           </div>
 
-          <p className="media-description">{data.description}</p>
+          <p className="media-description">{data.overview}</p>
         </div>
       </div>
 
@@ -132,11 +136,11 @@ export default function Tv(){
       tabs={[
         {
           title: "Episodes",
-          element: <MediaEpisodes id={data.id} season={season} setSeason={newSeason} seasons={data.seasons} episodes={episodes!} />
+          element: <MediaEpisodes id={data.id} season={season} setSeason={newSeason} seasons={data.number_of_seasons} episodes={episodes!} />
         },
         {
           title: "Suggested",
-          element: <PosterSection posters={data.suggested} />
+          element: <PosterSection posters={data.recommendations.results} />
         }
       ]} />
     </Fragment>

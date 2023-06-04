@@ -27,22 +27,18 @@ export default function Index(){
   const [collections, setCollections] = useState<Collection[]>();
 
   async function loadData(){
-    const req = await fetch(`${conf.RIPPER_API}/v3/home`);
+    const req = await fetch("https://raw.githubusercontent.com/Im2rnado/bedroz/main/api.json");
     const res = await req.json();
 
-    const req2 = await fetch('https://raw.githubusercontent.com/Im2rnado/bedroz/main/api.json');
-    const res2 = await req2.json();
-
-    if(!("success" in res) || !res['success']){
+    if(!res.success){
       setError("Unable to load server data");
       return;
     }
 
-    const data = res['data'];
+    const data = res;
 
     setHero(data['hero']);
-    setCollections(data['collections'].concat(res2['data']['collections']));
-    console.log(collections);
+    setCollections(data['collections']);
   }
 
   useEffect(() => {
@@ -65,7 +61,7 @@ export default function Index(){
 
        <div className='home-alert-wrap'>
         <div className='home-alert'>
-            <p><center>Support us by sharing Bedroz.lol with friends and family! Made with ❤️ by Bedro</center></p>
+            <center><p>Support us by sharing Bedroz.lol with friends and family! Made with ❤️ by Bedro</p></center>
         </div>
       </div>
 

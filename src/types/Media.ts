@@ -2,16 +2,17 @@ import PosterOptions from "./PosterOptions"
 
 interface MediaProps{
   id: string,
+  tmdb_id: string,
   title: string,
-  description: string,
+  overview: string,
   tagline?: string,
-  genres: string[],
-  date: string,
-  suggested: PosterOptions[],
-  images: {
-    backdrop: string,
-    logo: string
-  }
+  genres: any[],
+  release_date: string,
+  recommendations: { results: PosterOptions[] },
+  poster_path: string,
+  backdrop_path: string,
+  images: { logos: any[] },
+  logo: { file_path: string },
 }
 
 export interface MovieProps extends MediaProps{
@@ -19,17 +20,19 @@ export interface MovieProps extends MediaProps{
 }
 
 export interface TvData extends MediaProps{
-  seasons: number,
+  number_of_seasons: number,
   episodes: EpisodeProps[]
 }
 
 export interface TvProps extends MediaProps{
-  seasons: number
+  name: string,
+  number_of_seasons: number,
+  first_air_date: string
 }
 
 export interface EpisodeProps{
-  number: string|number,
-  image: string,
-  title: string,
+  episode_number: string|number,
+  still_path: string,
+  name: string,
   runtime: number
 }

@@ -109,21 +109,16 @@ export default function Player(){
           <iframe
           allowFullScreen
           onLoad={() => setLoaded(true)}
-          sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+          // sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
           src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
           // src={`https://autoembed.to/${type}/tmdb/${id}${season ? "-" + season : ""}${episode ? "-" + episode : ""}?server=2`}></iframe>
-	  // src={`${conf.RIPPER_API}/v2/embed/${type}?id=${id}${season ? "&s="+season : ""}${episode ? "&e="+episode : ""}`}></iframe>
         }
 
         {
-          loaded &&
+          typeof type !== "undefined" &&
 	<script>
             {`
-		Object.defineProperty(document.querySelector('iframe').contentWindow.navigator, 'user-agent', "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1");
-	       //var frames = document.getElementsByTagName('iframe');
-	       //    for (var frame of frames) {
-	       //        frame.setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");
-	       //    }
+	       document.querySelector('iframe').setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");}
             `}
           </script>
          }

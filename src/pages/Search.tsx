@@ -25,16 +25,17 @@ export default function Search(){
     }
 
     const req = await fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${conf.API_KEY}`);
-    const res = await req.json().results;
+    const res = await req.json();
 
-    if(res.count <= 0){
+    const results = res.results.filter((i: any) => i.media_type == "movie" || i.media_type == "tv");
+    if(results.count <= 0){
       setResults(null);
       setError("No results found.");
       return;
     }
 
     setError(null);
-    setResults(res);
+    setResults(results);
   }
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function Search(){
         type="text"
         value={query || ""}
         onChange={e => setQuery(e.target.value)}
-        placeholder="Search for movies and series" />
+        placeholder="Search for Movies and TV Shows" />
 
         {
           query &&
@@ -86,7 +87,7 @@ export default function Search(){
           :
           <div className="search-center">
             <i className="fa-solid fa-camera-movie"></i>
-            <p>Search for movies & series</p>
+            <p>Search for Movies & TV Shows</p>
           </div>
         )
       }
