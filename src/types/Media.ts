@@ -2,7 +2,7 @@ import PosterOptions from "./PosterOptions"
 
 interface MediaProps{
   id: string,
-  tmdb_id: string,
+  imdb_id: string,
   title: string,
   overview: string,
   tagline?: string,
