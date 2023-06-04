@@ -111,14 +111,14 @@ export default function Player(){
           onLoad={() => setLoaded(true)}
           // sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
           src={`https://vidsrc.me/embed/${id}${season ? "/"+season : ""}${episode ? "-"+episode : ""}`}></iframe>
-          // src={`https://autoembed.to/${type}/tmdb/${id}${season ? "-" + season : ""}${episode ? "-" + episode : ""}?server=2`}></iframe>
         }
 
         {
-          typeof type !== "undefined" &&
+          loaded && 
 	<script>
             {`
-	       document.querySelector('iframe').setAttribute("sandbox", "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation");}
+	       var iframe = document.querySelector('player_iframe');
+	       iframe.sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation";
             `}
           </script>
          }
@@ -138,8 +138,8 @@ export default function Player(){
             }
 
             <Link to={`/${type}/${id}`}>
-              <i className="fa-solid fa-close"></i>
-            </Link>
+                 <i className="fa-solid fa-close"></i>
+              </Link>
           </div>
         }
       </div>
