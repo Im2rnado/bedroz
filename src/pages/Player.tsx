@@ -116,7 +116,7 @@ export default function Player() {
           <iframe
             allowFullScreen
             onLoad={() => setLoaded(true)}
-            sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+            // sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
             // src={`https://vidsrc.me/embed/${id}${season ? "/" + season : ""}${episode ? "-" + episode : ""}`}
             src={`https://www.2embed.to/embed/tmdb/${type}?id=${id}${
               season ? "&s=" + season : ""
@@ -124,9 +124,7 @@ export default function Player() {
           ></iframe>
         )}
 
-        {
-          // loaded && removeAds(document.getElementsByTagName("iframe"))
-        }
+        {loaded && removeAds(document.getElementsByTagName("iframe"))}
 
         {loaded && (
           <div className="overlay">
@@ -134,18 +132,15 @@ export default function Player() {
               <i className="fa-solid fa-home"></i>
             </Link>
 
-            {
-              (type && type === "tv" && showNext() && (
-                <Link to={getNext()} onClick={() => onNextClick()}>
-                  <i className="fa-solid fa-forward-step"></i>
-                </Link>
-              ),
-              (
-                <Link to={`/${type}/${id}`}>
-                  <i className="fa-solid fa-close"></i>
-                </Link>
-              ))
-            }
+            {type && type === "tv" && showNext() && (
+              <Link to={getNext()} onClick={() => onNextClick()}>
+                <i className="fa-solid fa-forward-step"></i>
+              </Link>
+            )}
+
+            <Link to={`/${type}/${id}`}>
+              <i className="fa-solid fa-close"></i>
+            </Link>
           </div>
         )}
       </div>
