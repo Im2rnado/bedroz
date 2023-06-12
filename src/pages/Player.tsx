@@ -116,14 +116,17 @@ export default function Player() {
           <iframe
             allowFullScreen
             onLoad={() => setLoaded(true)}
-            // sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
-            src={`https://vidsrc.me/embed/${id}${season ? "/" + season : ""}${
-              episode ? "-" + episode : ""
-            }`}
+            sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+            // src={`https://vidsrc.me/embed/${id}${season ? "/" + season : ""}${episode ? "-" + episode : ""}`}
+            src={`https://www.2embed.to/embed/tmdb/${type}?id=${id}${
+              season ? "&s=" + season : ""
+            }${episode ? "&e=" + episode : ""}`}
           ></iframe>
         )}
 
-        {loaded && removeAds(document.getElementsByTagName("iframe"))}
+        {
+          // loaded && removeAds(document.getElementsByTagName("iframe"))
+        }
 
         {loaded && (
           <div className="overlay">

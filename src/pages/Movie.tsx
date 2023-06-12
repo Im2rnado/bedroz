@@ -103,7 +103,7 @@ export default function Movie() {
           </div>
 
           <div className="media-actions">
-            <Link to={`/player/${data.imdb_id}`}>
+            <Link to={`/player/${data.id}`}>
               <button className="primary">
                 <i className="fa-solid fa-play"></i>
                 <p>Play</p>
