@@ -8,7 +8,8 @@
 
 ## Usage
 1. Run `install.bat` to install all dependencies.
-2. Optional changes:
+2. Add your TMDB API Key in /src/config.ts
+3. Optional changes:
 
 - `Logo`: Change the site logo by uploading a png file to /public/assets and naming it logo.png
 - `Theme Color`: Change the main color of the site by opening /src/styles/main.scss and editing the line with `$primary-color: ...;`
