@@ -22,9 +22,5 @@
 ## Support
 If you need any help, encounter any issues, or just have a suggestion, feel free to open an issue in this repository or contact me on Discord (tornado#7262).
 
-<p align="center">
-<a href="https://discord.com/channels/@me"><img src="https://img.shields.io/badge/Discord-tornado%237262-%237289DA?style=flat&logo=discord" alt="discord"/></a>
-<a href="https://twitter.com/im2rnadoo"><img src="https://img.shields.io/badge/Twitter-@im2rnadoo-%231DA1F2?style=flat&logo=twitter" alt="twitter"/></a>
-<br/>
-<a href="./donate.md"><img src="https://img.shields.io/badge/Donate%20Bitcoin-1F2gwh4U4KHk2n8eWEKtwsfMxgh9ibUMtn-%23FF9900?style=flat&logo=bitcoin" alt="donate bitcoin"/></a>
-</p>
+### Credits
+Credits to rypr.io for making the original site
