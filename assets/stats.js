@@ -20,7 +20,7 @@ const request = async () => { // Calling a "synchronous" fetch
       desc.push("__**:calendar: Date:**__ " + item.date + 
                 "\n__**:telephone: Impressions:**__ " + item.impression +
                 "\n__**:map: CPM:**__ " + item.cpm +
-               "\n__**:money_with_wings: Revenue:**__ " + item.revenue);
+               "\n__**:money_with_wings: Revenue:**__ $" + item.revenue);
         totalrev = totalrev + item.revenue;
     });
 
