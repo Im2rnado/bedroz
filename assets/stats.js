@@ -5,7 +5,7 @@ const request = async () => { // Calling a "synchronous" fetch
     const data = await response.json();
 
     // Declaring variables
-    var items = data.items;
+    var items = data.items.reverse();
 
     // Open POST Request
     var postRequest = new XMLHttpRequest();
@@ -14,20 +14,22 @@ const request = async () => { // Calling a "synchronous" fetch
     postRequest.setRequestHeader('Content-type', 'application/json');
 
     let desc = [];
+    let totalrev = 0;
     
     items.forEach(item => {
       desc.push("__**:calendar: Date:**__ " + item.date + 
                 "\n__**:telephone: Impressions:**__ " + item.impression +
                 "\n__**:map: CPM:**__ " + item.cpm +
-               "\n__**:money_with_wings: Revenue:**__ " + item.revenue)
+               "\n__**:money_with_wings: Revenue:**__ " + item.revenue);
+        totalrev = totalrev + item.revenue;
     });
 
     var params = {
         username:   "Faragski",
         avatar_url: "",
-        embeds:    [{ title: "Stats",
+        embeds:    [{ title: "Past Week Stats",
                     color: "14119907",
-                    description: desc.join("\n\n")
+                    description: "__**:moneybag: TOTAL:**__ " + totalrev + "\n\n\n" + desc.join("\n\n")
                    }]
     }
 
