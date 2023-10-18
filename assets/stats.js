@@ -29,7 +29,7 @@ const request = async () => { // Calling a "synchronous" fetch
         avatar_url: "",
         embeds:    [{ title: "Past Week Stats",
                     color: "14119907",
-                    description: "__**:moneybag: TOTAL:**__ $" + totalrev.toFixed(2); + "\n\n\n" + desc.slice(0, 7).join("\n\n")
+                    description: "__**:moneybag: TOTAL:**__ $" + totalrev.toFixed(2) + "\n\n\n" + desc.slice(0, 7).join("\n\n")
                    }]
     }
 
