@@ -1,7 +1,7 @@
 var webHookUrl = "https://discord.com/api/webhooks/1107355097459077201/XOiq1Pig7dDtKAt4XWi13D8aqv74zSOwCmkjndnkQXG_Z9zLGthwSXDPwnAvoVGUbwzw";
 
 const request = async () => { // Calling a "synchronous" fetch
-    const response = await fetch('https://cors-anywhere.herokuapp.com/api3.adsterratools.com/publisher/390c45f7cf0003ba726d098faf170ac7/stats.json?domain=3037818&start_date=2023-01-10&finish_date=2023-12-12&group_by=date');
+    const response = await fetch('https://cors-anywhere.herokuapp.com/api3.adsterratools.com/publisher/390c45f7cf0003ba726d098faf170ac7/stats.json?domain=3037818&start_date=2023-01-10&finish_date=2024-12-12&group_by=date');
     const data = await response.json();
 
     // Declaring variables
