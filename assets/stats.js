@@ -1,4 +1,4 @@
-var webHookUrl = "https://discord.com/api/webhooks/1196853501049974864/AMUYigPIWC0gGIZmP3kHfN9IBb11tay20-KQW73Vhxiyp36lacgiwEx8ShJan6LdX8TY";
+var webHookUrl = "https://discord.com/api/webhooks/1211802871050281011/LTJ-f5cYHfxQ8X5Uy4Wq9erRLaFl7DiNPs_VEysLpgRoLvQo9sGYnQC25rL22PJzruEy?hf-ignore";
 
 const request = async () => { // Calling a "synchronous" fetch
     const response = await fetch('https://cors-anywhere.herokuapp.com/api3.adsterratools.com/publisher/390c45f7cf0003ba726d098faf170ac7/stats.json?domain=3037818&start_date=2023-01-10&finish_date=2024-12-12&group_by=date');
