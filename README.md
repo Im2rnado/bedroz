@@ -21,6 +21,3 @@
 
 ## Support
 If you need any help, encounter any issues, or just have a suggestion, feel free to open an issue in this repository or contact me on Discord (tornado#7262).
-
-### Credits
-Credits to rypr.io for making the original site
